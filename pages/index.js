@@ -1,5 +1,18 @@
 import Head from "next/head";
 import { BsFillMoonStarsFill } from "react-icons/bs";
+import { AiFillTwitterCircle, AiFillLinkedin } from "react-icons/ai";
+import Image from "next/image";
+import deved from "../public/assets/dev-ed-wave.png"
+import design from "../public/assets/design.png"
+import code from "../public/assets/code.png"
+import consulting from "../public/assets/consulting.png"
+import web1 from "../public/assets/web1.png"
+import web2 from "../public/assets/web2.png"
+import web3 from "../public/assets/web3.png"
+import web4 from "../public/assets/web4.png"
+import web5 from "../public/assets/web5.png"
+import web6 from "../public/assets/web6.png"
+
 
 
 
@@ -13,17 +26,100 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="bg-white px-10" >
+      <main className="bg-white px-10 md:px-20 lg:px-40" >
         <section className=" min-h-screen">
           <div className="py-10 mb-12 flex justify-between ">
-            <h1 className="text-xl font-thin text-gray-500">developedby Judy</h1>
+            <h1 className="text-xl  font-burtons">developedby Judy</h1>
             <ul className="flex items-center ">
               <li ><BsFillMoonStarsFill className="cursor-pointer text-2xl" /></li>
               <li > <a href="#" className="bg-gradient-to-r from-cyan-500 to-teal-500  bg-cyan-500 text-white px-4 py-2 rounded-md ml-8">Resume</a></li>
             </ul>
           </div>
+          <div className="text-center p-10  py-8">
+            <h2 className="text-5xl py-2 text-teal-500 font-medium">Benoy Judy</h2>
+            <h3 className="text-2xl py-2 ">React Developer</h3>
+            <p className="text-md py-3 leading-8 text-gray-700">Freelancer providing services for programming and design content needs .Join me and lets get crackinig!!</p>
+
+          </div>
+          <div className="flex text-4xl text-gray-600 py-3 justify-center gap-2">
+            <AiFillLinkedin />
+            <AiFillTwitterCircle />
+          </div>
+          <div className="relative bg-gradient-to-b from-teal-600 rounded-full w-80 h-80 mx-auto overflow-hidden mt-100">
+            <Image src={deved} alt='developer Benoy' layout="fill" objectFit="cover" />
+          </div>
+
         </section>
-      </main>
+
+
+        {/* 2nd section */}
+
+        <section >
+          <div>
+            <h3 className="text-3xl py-2 font-semibild">
+              Services i offer
+            </h3>
+            <p className="text-md py-2 leading-8 ">is simply dummy text of the <span className="text-teal-500">printing and typesetting industry</span> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p className="text-md py-2 leading-8 "> I offer wide range of services including brand design ,programming and teaching.</p>
+          </div>
+          <div>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+              <Image src={design} width={100} height={100} />
+              <h3 className="text-lg font-md pt-8 pb-2">Beautiful Designs</h3>
+              <p className="py-2"> Creating elegant designs suited for your needs </p>
+              <h4 className=" text-teal-600 py-4">Design tools I use</h4>
+              <p className="text-gray-800 py-1">Photoshop</p>
+              <p className="text-gray-800 py-1">Photoshop</p>
+              <p className="text-gray-800 py-1">Photoshop</p>
+              <p className="text-gray-800 py-1">Photoshop</p>
+            </div>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+              <Image src={code} width={100} height={100} />
+              <h3 className="text-lg font-md pt-8 pb-2">Beautiful Designs</h3>
+              <p className="py-2"> Creating elegant designs suited for your needs </p>
+              <h4 className=" text-teal-600 py-4">Design tools I use</h4>
+              <p className="text-gray-800 py-1">Photoshop</p>
+              <p className="text-gray-800 py-1">Photoshop</p>
+              <p className="text-gray-800 py-1">Photoshop</p>
+              <p className="text-gray-800 py-1">Photoshop</p>
+            </div>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+              <Image src={consulting} width={100} height={100} />
+              <h3 className="text-lg font-md pt-8 pb-2">Beautiful Designs</h3>
+              <p className="py-2"> Creating elegant designs suited for your needs </p>
+              <h4 className=" text-teal-600 py-4">Design tools I use</h4>
+              <p className="text-gray-800 py-1">Photoshop</p>
+              <p className="text-gray-800 py-1">Photoshop</p>
+              <p className="text-gray-800 py-1">Photoshop</p>
+              <p className="text-gray-800 py-1">Photoshop</p>
+            </div>
+          </div>
+        </section>
+
+        {/* 3rd section */}
+        <section>
+          <div>
+            <h3 className="text-3xl py-1">
+              Portfolio
+            </h3>text-gray-800
+            <p className="text-md py-2 leading-8 text-gray-800">is simply dummy text of the <span className="text-teal-500">printing and typesetting industry</span> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p className="text-md py-2 leading-8 text-gray-800"> I offer wide range of services including brand design ,programming and teaching.</p>
+          </div>
+          <div>
+            <div>
+              <Image src={web1} />
+              <Image src={web2} />
+              <Image src={web3} />
+              <Image src={web4} />
+              <Image src={web5} />
+              <Image src={web6} />
+
+
+            </div>
+          </div>
+
+        </section>
+      </main >
     </>
   );
 }
