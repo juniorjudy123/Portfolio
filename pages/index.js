@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { AiFillTwitterCircle, AiFillLinkedin } from "react-icons/ai";
+import { GiHamburgerMenu } from "react-icons/gi";
 import Image from "next/image";
 import benoy from "../public/assets/benoy.jpg";
 import design from "../public/assets/design.png"
@@ -13,12 +14,13 @@ import web4 from "../public/assets/web4.png"
 import web5 from "../public/assets/web5.png"
 import web6 from "../public/assets/web6.png"
 import { useState } from "react";
+import netflix from '../public/assets/netflix-ai.png'
 
 
 
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(true)
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -33,19 +35,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900" >
+      <main className=" px-10 md:px-10 lg:px-20 dark:bg-gray-900 bg-gray-100" >
 
         <section className=" min-h-screen">
           <div className="py-10 mb-12 flex justify-between">
             <h1 className="text-xl  font-burtons dark:text-white  ">developedby Judy</h1>
             <ul className="flex items-center ">
               <li ><BsFillMoonStarsFill className="cursor-pointer text-2xl  dark:text-white " onClick={toggleDarkMode} /></li>
-              <li > <a href="#" className="bg-gradient-to-r from-cyan-500 to-teal-500  bg-cyan-500 text-white px-4 py-2 rounded-md ml-8">Resume</a></li>
+              <li > <a href="#" className="bg-gradient-to-r from-cyan-500 to-teal-500 shadow-sm bg-cyan-500 text-white px-4 py-2 rounded-md ml-8  animate-pulse">Resume</a></li>
+              <li><GiHamburgerMenu className="text-2xl ml-8 dark:text-white" /></li>
             </ul>
           </div>
           <div className="text-center p-10  py-8">
-            <h2 className="text-5xl py-2 text-teal-500 font-medium">Benoy Judy</h2>
-            <h3 className="text-2xl py-2  dark:text-white ">React Developer</h3>
+            <h2 className="text-5xl py-2 text-teal-500 font-normal font-serif"> I'M Benoy Judy,</h2>
+            <h3 className="text-2xl py-2  dark:text-white ">React Developer based in Kerala</h3>
             <p className="text-md py-3 leading-8 text-gray-700  dark:text-gray-400">Freelancer providing services for programming and design content needs .Join me and lets get crackinig!!</p>
 
           </div>
@@ -116,7 +119,9 @@ export default function Home() {
           </div>
           <div>
             <div>
-              <Image src={web1} />
+              <a href="https://netflix-ai-one.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <Image src={netflix} alt="Project 1" />
+              </a>
               <Image src={web2} />
               <Image src={web3} />
               <Image src={web4} />
