@@ -14,22 +14,23 @@ import web3 from "../public/assets/web3.png";
 import web4 from "../public/assets/web4.png";
 import web5 from "../public/assets/web5.png";
 import web6 from "../public/assets/web6.png";
-import netflix from '../public/assets/netflix-ai.png';
+import netflix from '../public/assets/netflix.png';
 import { useRef, useState, useEffect } from "react";
 import styles from "../styles/parallax.module.css";
 import { BsChevronUp } from 'react-icons/bs';
+import { FaSquarePhone } from "react-icons/fa6";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
-  const dropdownRef = useRef(null);
   const [scrollY, setScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     // Add scroll event listener to show/hide the button
     const handleScroll = () => {
-      if (window.pageYOffset > 300) {
+      if (window.scrollY > 300) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -86,7 +87,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="px-10 md:px-10 lg:px-20 dark:bg-gray-900 bg-gray-100">
+      <main className="px-10 md:px-20 lg:px-30 dark:bg-gray-900 bg-gray-100">
+        {/* go up button */}
+        <button
+          className={`fixed bottom-4 right-4 bg-gray-800 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+          onClick={scrollToTop}
+          aria-label="Scroll to top"
+        >
+          <BsChevronUp className="text-2xl" />
+        </button>
 
         <section className="min-h-screen">
 
@@ -106,7 +115,7 @@ export default function Home() {
               </li>
               <li>
                 <GiHamburgerMenu
-                  className={`text-4xl ml-8 dark:text-white cursor-pointer transition-transform duration-100 ${menuOpen ? 'transform rotate-90' : ''}`}
+                  className={`text-4xl ml-8 dark:text-white cursor-pointer transition-transform duration-100 ${menuOpen ? 'transform rotate-180' : ''}`}
                   onClick={toggleMenuOpen}
                 />
               </li>
@@ -131,27 +140,21 @@ export default function Home() {
 
           <div className={`parallax ${styles.parallax}`} style={{ transform: `translateY(${translateY}px)` }}>
             <div className="text-center p-10 py-8">
-              <h2 className="text-5xl py-2 text-teal-500 font-normal font-serif">I'M Benoy Judy,</h2>
-              <h3 className="text-2xl py-2 dark:text-white">React Developer based in Kerala</h3>
-              <p className="text-md py-3 leading-8 text-gray-700 dark:text-gray-400">Freelancer providing services for programming and design content needs. Join me and let's get cracking!!</p>
+              <h2 className="text-5xl py-2 text-teal-500 font-normal font-serif md:text-6xl">I'M Benoy Judy,</h2>
+              <h3 className="text-2xl py-2 dark:text-white md:text-3xl">React Developer based in Kerala</h3>
+              <p className="text-md py-3 leading-8 text-gray-700 dark:text-gray-400  md:text-xl max-w-lg mx-auto ">Freelancer providing services for programming and design content needs. Join me and let's get cracking!!</p>
             </div>
-            <div className="flex text-6xl text-gray-500 py-2 pb-4 justify-center gap-2">
+            <div className="flex text-4xl text-gray-500 py-2 pb-4 justify-center gap-6">
               <AiFillLinkedin />
               <AiFillTwitterCircle />
+              <FaSquarePhone />
             </div>
-            <div className="relative bg-gradient-to-b from-teal-600 rounded-full w-80 h-80 mx-auto overflow-hidden mt-100">
+            <div className="relative bg-gradient-to-b from-teal-600 rounded-full w-80 h-80 mx-auto overflow-hidden mt-20 md:h-96 md:w-96">
               <Image src={benoy} alt="developer Benoy" objectFit="cover" />
             </div>
 
           </div>
-          {/* go up button */}
-          <button
-            className={`fixed bottom-4 right-4 bg-gray-800 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
-            onClick={scrollToTop}
-            aria-label="Scroll to top"
-          >
-            <BsChevronUp className="text-2xl" />
-          </button>
+
 
         </section>
 
@@ -165,7 +168,7 @@ export default function Home() {
             <p className="text-md py-2 leading-8 "> I offer wide range of services including brand design ,programming and teaching.</p>
           </div>
 
-          <div className="lg:flex gap-10">
+          <div className="lg:flex gap-10 ">
             <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white">
               <Image src={design} width={100} height={100} />
               <h3 className="text-lg font-md pt-8 pb-2">Beautiful Designs</h3>
@@ -202,26 +205,21 @@ export default function Home() {
 
         {/* 3rd section */}
         < section id="projects" >
-          <div>
+          <div className="dark:text-white">
             <h3 className="text-3xl py-1">
               Latest projects
             </h3>
-            <p className="text-md py-2 leading-8 text-gray-800">is simply dummy text of the <span className="text-teal-500">printing and typesetting industry</span> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            <p className="text-md py-2 leading-8 text-gray-800"> I offer wide range of services including brand design ,programming and teaching.</p>
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-white ">is simply dummy text of the <span className="text-teal-500">printing and typesetting industry</span> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-white"> I offer wide range of services including brand design ,programming and teaching.</p>
           </div>
-          <div>
-            <div>
-              <a href="https://netflix-ai-one.vercel.app/" target="_blank" rel="noopener noreferrer">
-                <Image src={netflix} alt="Project 1" />
-              </a>
-              <Image src={web2} />
-              <Image src={web3} />
-              <Image src={web4} />
-              <Image src={web5} />
-              <Image src={web6} />
+
+          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+            <div className="basis-1/3 flex-1 relative over "><a href="https://netflix-ai-one.vercel.app/" target="_blank" rel="noopener noreferrer"><Image src={netflix} className="rounded-lg " objectFit="cover" width={"100%"} height={"100%"} layout="responsive" /></a></div>
+            <div className="basis-1/3 flex-1 relative over"><Image src={web1} className="rounded-lg p-2" objectFit="cover" width={"100%"} height={"100%"} layout="responsive" /></div>
+            <div className="basis-1/3 flex-1 relative over"><Image src={web3} className="rounded-lg" objectFit="cover" width={"100%"} height={"100%"} layout="responsive" /></div>
+            <div className="basis-1/3 flex-1 relative over"><Image src={web4} className="rounded-lg" objectFit="cover" width={"100%"} height={"100%"} layout="responsive" /></div>
 
 
-            </div>
           </div>
 
         </section >
