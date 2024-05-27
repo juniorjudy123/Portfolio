@@ -13,7 +13,10 @@ module.exports = {
     extend: {
       fontFamily: {
         burtons: "burtons"
-      }
+      },
+      backgroundAttachment: {
+        'fixed': 'fixed',
+      },
     },
   },
   plugins: [],
